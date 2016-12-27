@@ -1,0 +1,12 @@
+body{
+  margin-top: 3%;
+  background: grey;
+}
+
+.imgSelecter{
+  background: black;
+}
+
+.imgChoose{
+  height: 150px;
+}

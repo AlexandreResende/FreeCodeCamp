@@ -1,0 +1,66 @@
+body{
+  margin-top: 0%;
+  background: rgba(0,0,0,0.8);
+}
+
+.bgImage{
+  margin-top: -20px;
+  background-image: url('http://einerd-static.petaxxoninformat.netdna-cdn.com/wp-content/uploads/2015/01/0216.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 390px;
+}
+
+.portrait{
+  width: 50%;
+}
+
+.descriptionResume{
+  margin-top: 2%;
+  height: 350px;
+  background: rgba(255,255,255,0.7);
+  color: black;
+  font-size: 22px;
+  text-align: justify;
+}
+
+.btn{
+  font-size: 15px;
+}
+
+.negrito{
+  font-weight: bold;
+}
+
+#myPortfolio{
+  margin-top: 20px;
+  padding-bottom: 40px;
+  color: white;
+  font-size: 30px
+}
+
+p{
+  margin-top 5px;
+}
+
+.portfolioImg{
+  width: 50%;
+  height: 50px;
+}
+
+.thumbnail{
+  
+  height: 300px;
+  width:  40%;
+}
+
+.formatPortfolio{
+  margin-top: 5px;
+  font-size:  20px;
+  color:  black;
+}
+
+h2{
+  text-align: center;
+  color: white;
+}

@@ -1,0 +1,37 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/*font-family: 'Indie Flower', cursive;*/
+.indieFlower{
+	font-family: 'Indie Flower';
+}
+
+.well {
+	background: lightblue;
+}
+
+.containerAbsolute{
+	position: relative;
+}
+
+.quoteBlock {
+	border: 0.1em solid black;
+	width:  50%;
+	height: 30em;
+}
+
+.btn {
+	position: absolute;
+	margin-bottom: 1em;
+	bottom: 0;
+	left: 0;
+	width: 50%;
+	height: 3em;
+	display: inline-block;
+}
+
+.secondBtn{
+	margin-left: 50%;
+}

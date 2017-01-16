@@ -36,10 +36,19 @@
 		<div class="container-fluid containerAbsolute">
 			<div class="row">
 				<div class="col-xs-offset-3 col-xs-6 quoteBlock">
-					<div class="col-xs-12">Quote</div>
-					<div class="col-xs-12"><p>here comes the quote</p></div>
-					<button class="btn btn-block btn-success firstBtn">Generate new Quote</button>
-					<button class="btn btn-block btn-primary secondBtn">Twitter it </button>
+					<div class="col-xs-12 text-center fontFormat">Your Quote</div>
+					<div class="col-xs-12 fontFormat text-center"><p id="quote"></p></div>
+					<div class="col-xs-12 fontFormat text-center"><p id="author"></p></div>
+					<button class="btn btn-block btn-success firstBtn" onclick="newQuote()">New Quote</button>
+					<a id="tweet" href="https://twitter.com/intent/tweet?text=Humankind%20cannot%20gain%20anything%20without%20first%20giving%20something%20in%20return.%20To%20obtain%2C%20something%20of%20equal%20value%20must%20be%20lost." target="_blank"><button class="btn btn-block btn-primary secondBtn" onclick="tweetIt()"> Tweet it </button></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid footer">
+			<div class="row well">
+				<div class="col-sm-12 text-center">
+					Developed by Alexandre Resende.
 				</div>
 			</div>
 		</div>
@@ -47,7 +56,9 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script type="text/javascript" src="./script/quotes.js"></script>
+		<script type="text/javascript" src="./script/rng.js"></script>
 		<script type="text/javascript" src="./script/app.js"></script>
+		<script type="text/javascript" src="./script/tweetIt.js"></script>
 
 	</body>
 </html>

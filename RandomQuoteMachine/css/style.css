@@ -5,7 +5,7 @@
 
 /*font-family: 'Indie Flower', cursive;*/
 .indieFlower{
-	font-family: 'Indie Flower';
+	font-family: 'Indie Flower', sans-serif;
 }
 
 .well {
@@ -17,17 +17,26 @@
 }
 
 .quoteBlock {
+	margin-top: 10em;
+	font-family: 'Indie Flower', sans-serif;
 	border: 0.1em solid black;
 	width:  50%;
 	height: 30em;
 }
 
+.fontFormat {
+	font-family: 'Indie Flower', sans-serif;
+	font-size: 2em;
+}
+
 .btn {
 	position: absolute;
-	margin-bottom: 1em;
+	margin-left: 10%;
 	bottom: 0;
 	left: 0;
-	width: 50%;
+	font-family: 'Indie Flower', sans-serif;
+	font-size: 1.5em;
+	width: 40%;
 	height: 3em;
 	display: inline-block;
 }
@@ -35,3 +44,19 @@
 .secondBtn{
 	margin-left: 50%;
 }
+
+.footer{
+	position: absolute;
+	font-family: 'Indie Flower', sans-serif;
+	font-size: 1.5em;
+	width: 100%;
+	bottom: 0;
+}
+
+a,
+a:active,
+a:hover {
+	color: white;
+	text-decoration: none;
+}
+

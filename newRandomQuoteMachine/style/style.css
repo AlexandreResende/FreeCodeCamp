@@ -1,0 +1,84 @@
+
+html, body {
+	height: 100%;
+	font-family: 'Oswald', sans-serif;
+	font-size: 1em;
+}
+
+.wellQuote {
+	background: white;
+	border: 0 solid white;
+}
+
+.quoteBox {
+	border: 0.1em solid black;
+	height: 20em;
+}
+
+.quote {
+	margin-top: 1.6em;
+	font-size: 1.3em;
+}
+
+.buttonsBottom {
+	margin: 0 1em 1em 0;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.btnTwitter {
+	border: 0.1em solid black;
+	background-color: white;
+}
+
+p {
+	margin-right: 27%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.quotePosition {
+	position: relative;
+}
+
+.quoteBlock {
+	margin-top: 2em;
+	margin-bottom: 2em;
+	padding: 0;
+	border: 0.2em solid grey;
+	height: 20em;
+}
+
+.btnQuote {
+
+}
+
+.btnTwitter {
+	background-color: white;
+	border: 0.1em solid black;
+}
+
+.btn-group {
+	margin: 10px;
+	position: absolute;
+	display: inline-block;
+	bottom: 0;
+}
+
+.footerWell {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+*/

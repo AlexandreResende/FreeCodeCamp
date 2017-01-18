@@ -5,6 +5,10 @@ html, body {
 	font-size: 1em;
 }
 
+.title {
+	font-size: 1.7em;
+}
+
 .wellQuote {
 	background: white;
 	border: 0 solid white;
@@ -36,7 +40,10 @@ p {
 	margin-right: 27%;
 }
 
-
+#author {
+	position: absolute;
+	top: 9em;
+}
 
 
 

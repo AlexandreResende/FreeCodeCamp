@@ -9,6 +9,13 @@ html, body {
 	font-size: 1.7em;
 }
 
+.wellTitle {
+	background: black;
+	color: white;
+	height: 9em;
+	line-height: 6em;
+}
+
 .wellQuote {
 	background: white;
 	border: 0 solid white;
@@ -45,47 +52,3 @@ p {
 	top: 9em;
 }
 
-
-
-
-
-
-
-
-
-
-/*
-.quotePosition {
-	position: relative;
-}
-
-.quoteBlock {
-	margin-top: 2em;
-	margin-bottom: 2em;
-	padding: 0;
-	border: 0.2em solid grey;
-	height: 20em;
-}
-
-.btnQuote {
-
-}
-
-.btnTwitter {
-	background-color: white;
-	border: 0.1em solid black;
-}
-
-.btn-group {
-	margin: 10px;
-	position: absolute;
-	display: inline-block;
-	bottom: 0;
-}
-
-.footerWell {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-}
-*/

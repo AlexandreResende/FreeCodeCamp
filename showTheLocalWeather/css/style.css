@@ -1,0 +1,43 @@
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+.weatherDiv {
+	margin-top: 7%;
+	border: 0.1em solid black;
+	height: 30em;
+}
+
+.headerText {
+	margin-top: 5%;
+	font-family: 'Cinzel', sans-serif;
+	color: black;
+	font-size: 2em;
+}
+
+button {
+	position: absolute;
+	bottom: 1rem;
+	right: 1rem;
+}
+
+
+/*for screens less than 533px*/
+@media screen and (max-width: 533px) {
+	.headerText {
+		font-family: 'Cinzel', sans-serif;
+		color: black;
+		font-size: 1.5em;
+	}
+}
+
+/* for screens less than 420px*/
+@media screen and (max-width: 420px) {
+	.headerText {
+		font-family: 'Cinzel', sans-serif;
+		color: black;
+		font-size: 1.2em;
+	}
+}

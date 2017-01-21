@@ -28,9 +28,27 @@ $(document).ready(function(){
 					console.log('AJAX request to the server was successful.');
 				});
 
-		};
+		}
 
-		getQuote();
+		function displayLoadingGif(){
+
+			$('.loadingGif').css({display: 'block'});
+			$('#quote').text('');
+			$('#author').text('');
+
+		}
+
+		function removeLoadingGif(){
+
+			$('.loadingGif').css({display: 'none'});
+
+		}
+
+		displayLoadingGif();
+
+		setTimeout(removeLoadingGif, 4000)
+		setTimeout(getQuote, 4000);
+
 	});
 
 	$('#tweetIt').on('click', function(){

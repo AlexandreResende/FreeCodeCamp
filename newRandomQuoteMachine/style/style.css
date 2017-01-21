@@ -5,6 +5,12 @@ html, body {
 	font-size: 1em;
 }
 
+.loadingGif {
+	margin-top: -10rem;
+	position: absolute;
+	display: none;
+}
+
 .title {
 	font-size: 1.7em;
 }

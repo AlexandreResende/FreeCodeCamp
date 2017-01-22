@@ -9,7 +9,31 @@ $(document).ready(function(){
 				type: 'POST'
 			}
 		).done(function(data){
-			console.log(data.weather[0].main);
+			//console.log(data.weather[0].main);
+			console.log(data)
+
+			$('#currentTemperature').text('Local temperature: ' + kelvinToCelsius(data.main.temp)  + ' F');
+
+			$('#temperatureScale').on('click', function(){
+		
+				var textValue = $(this);
+
+				if(textValue.text() == 'Fahrenheit'){
+
+					textValue.text('Celsius');
+					textValue.removeClass('btn-danger').addClass('btn-success');
+					$('#currentTemperature').text('Local temperature: ' + kelvinToFahrenheit(data.main.temp) + ' F');
+
+				} else {
+
+					textValue.text('Fahrenheit');
+					textValue.removeClass('btn-success').addClass('btn-danger');
+					$('#currentTemperature').text('Local temperature: ' + kelvinToCelsius(data.main.temp) + ' C');
+
+				}
+			});
+
+
 		}).fail(function(xhr, status, error){
 			console.log('Status Code: ' + status);
 			console.log('Error happened: ' + error);

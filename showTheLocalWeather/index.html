@@ -25,14 +25,15 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-xs-offset-3 col-xs-6 weatherDiv">
-					<p class="text-center headerText">Local Weather</p>
-
-					<button class="btn btn-danger btn-lg">Fahrenheit</button>
+					<p class="text-center textFormatting">Local Weather</p>
+					<p id="currentTemperature" class="text-center textFormatting"></p>
+					<button id="temperatureScale" class="btn btn-danger btn-lg">Fahrenheit</button>
 				</div>
 			</div>
 		</div>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="./script/temperatureConversion.js"></script>
 		<script type="text/javascript" src="./script/app.js"></script>
 
 		<script>

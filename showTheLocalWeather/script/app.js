@@ -10,7 +10,13 @@ $(document).ready(function(){
 			}
 		).done(function(data){
 			//console.log(data.weather[0].main);
-			console.log(data)
+			var localWeatherOfTheDay = data.weather[0].main.toLowerCase();
+
+			//console.log(data);
+
+			//console.log(data.weather[0].main.toLowerCase());
+			//backgroundChanger('sunny');
+			//backgroundChanger(localWeatherOfTheDay);
 
 			$('#currentTemperature').text('Local temperature: ' + kelvinToCelsius(data.main.temp)  + ' F');
 

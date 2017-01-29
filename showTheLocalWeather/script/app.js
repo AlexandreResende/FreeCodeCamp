@@ -6,18 +6,16 @@ $(document).ready(function(){
 			{
 				dataType: 'json',
 				url: urlWeatherAPI,
-				type: 'POST'
+				type: 'GET'
 			}
 		).done(function(data){
-			//console.log(data.weather[0].main);
 			var localWeatherOfTheDay = data.weather[0].main.toLowerCase();
+			var location             = data.name;
+			var country              = data.sys.country;
 
-			//console.log(data);
+			backgroundChanger(localWeatherOfTheDay);
 
-			//console.log(data.weather[0].main.toLowerCase());
-			//backgroundChanger('sunny');
-			//backgroundChanger(localWeatherOfTheDay);
-
+			$('#location').text(location + ', ' + country);
 			$('#currentTemperature').text('Local temperature: ' + kelvinToCelsius(data.main.temp)  + ' F');
 
 			$('#temperatureScale').on('click', function(){
@@ -52,17 +50,23 @@ $(document).ready(function(){
 	var userLongitude;
 	var urlAPI;
 
-	if (navigator.geolocation){
-		navigator.geolocation.getCurrentPosition(function(position){
-			userLatitude  = position.coords.latitude.toFixed(2);
-			userLongitude = position.coords.longitude.toFixed(2);
-			urlAPI = 'http://api.openweathermap.org/data/2.5/weather?lat='+ userLatitude +'&lon=' + userLongitude + '&APPID=f4b716720c1f7fd4bedc8bc968bc6714';
-			console.log(urlAPI);
-			connectWeatherAPI(urlAPI);
-		});
-	} else {
-		console.log('Geolocation not found!');
-	}
+	$.ajax({
+		url: ' http://ip-api.com/json',
+		type: 'GET',
+		dataType: 'json',
+	})
+	.done(function(data) {
+		userLatitude  = data.lat;
+		userLongitude = data.lon;
+		urlAPI = 'http://api.openweathermap.org/data/2.5/weather?lat='+ userLatitude +'&lon=' + userLongitude + '&APPID=f4b716720c1f7fd4bedc8bc968bc6714';
+		connectWeatherAPI(urlAPI);
+	})
+	.fail(function(xhr, status, error) {
+		console.log("error");
+	})
+	.always(function(xhr, status) {
+		console.log("complete");
+	});
 
 });
 

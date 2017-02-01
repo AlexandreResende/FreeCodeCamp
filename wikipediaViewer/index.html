@@ -23,21 +23,33 @@
 
 	<body>
 
+		<i class="btn btn-lg glyphicon glyphicon-remove closeSearch"></i>
+
 		<div class="searchElements">
 			<input id="inputBox" class="btn inputBox" type="text" name="searchBox" placeholder="Search something on wikipedia here!" />
 			<button id="search" class="btn btn-default btn-lg">
 				<i class="glyphicon glyphicon-search"></i>
 			</button> 	
 			<button id="random" class="btn btn-default btn-lg">
-				<i class="glyphicon glyphicon-random"></i>
+				<a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"><i class="glyphicon glyphicon-random"></i></a>
 			</button>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-sm-offset-3 father">
+					<!-- structure of the element to be added 
+						<a href="#"><div class="elementsFound"></div></a>
+					--> 
+				</div>
+			</div>
 		</div>
 		
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script  src="./script/app.js"></script>
 		<script>
-			setInterval( () => window.location.reload() , 20000);
+			setInterval( () => window.location.reload() , 2000);
 		</script>
 
 	</body>

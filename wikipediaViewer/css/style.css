@@ -8,19 +8,32 @@ html, body {
 	font-family: 'Noticia Text', sans-serif;
 }
 
+.closeSearch {
+	position: absolute;
+	right: 1rem;
+	color: rgb(255, 0, 0);
+	display: none;
+}
+
 /*for margin-left: auto to work, you need to have a width on the element*/
 .searchElements {
 	width: 45rem;
 	margin-top: 20%;
 	margin-left: auto;
 	margin-right: auto;
-	/*
-	margin-left: 41%;
-	margin-top: 20%;
-	*/
 }
 
 .inputBox {
 	width: 30rem;
 	height: 4rem;
+}
+
+.elementsFound {
+	margin-top: 1rem;
+	border: 0.1rem solid black;
+	height: 10rem;
+}
+
+a {
+	color: rgb(0,0,0);
 }

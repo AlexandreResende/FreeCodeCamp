@@ -1,15 +1,21 @@
 
 $(document).ready(function(){
 
+	jQuery.support.cors = true;
+
 	$('#search').on('click', function(){
 
 		var textToBeSearched = $('#inputBox').val();
+		var urlSearched = 'https://en.wikipedia.org/w/api.php?action=query&format=json&gsrlimit=15&generator=search&origin=*&gsrsearch=' + 
+						   encodeURIComponent(textToBeSearched);
+
 		console.log(textToBeSearched);
 
 		$.ajax({
-			url: 'https://en.wikipedia.org/wiki/Special:Random',
+			url: urlSearched,
 			type: 'GET',
 			dataType: 'json',
+			crossDomain: true
 		})
 		.done(function(data) {
 			console.log("success");
@@ -19,15 +25,15 @@ $(document).ready(function(){
 			console.log("error");
 		})
 		.always(function() {
-			console.log("complete");
+			console.log("Connection with Wikipedias API...");
 		});
-		
+
 	});
 
-	$('#random').on('click', function(){
+	$('.closeSearch').on('click', function(){
 
-		window.location = 'https://en.wikipedia.org/wiki/Special:Random';
-
+		
+		
 	});
 
 });

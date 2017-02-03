@@ -30,8 +30,15 @@ html, body {
 
 .elementsFound {
 	margin-top: 1rem;
-	border: 0.1rem solid black;
-	height: 10rem;
+	text-align: center;
+}
+
+.father {
+	margin-top: 1rem;
+	margin-left: auto;
+	margin-right: auto;
+	width: 45rem;
+	display: block;
 }
 
 a {

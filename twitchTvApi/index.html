@@ -22,13 +22,23 @@
 
 	<body>
 
-		<p>Twitch API Project</p>
+		<div class="container">
+			<div class="row twitch">
+				<p class="text-center h3">Twitch Channels</p>
+				<ul class="list-unstyled channelsHolder">
+					<!--
+					type of element taht will hold the channel
+					<a href=""><div class="channelContainer"><li></li></div></a> 
+					-->
+				</ul>
+			</div>
+		</div>
 
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script  src="./script/app.js"></script>
 		<script>
-			setInterval( () => window.location.reload() , 20000);
+			setInterval( () => window.location.reload() , 2000);
 		</script>
 
 	</body>

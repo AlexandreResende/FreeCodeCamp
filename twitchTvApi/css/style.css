@@ -12,13 +12,23 @@ html, body {
 	margin: 7rem auto 7rem auto;
 	width: 50%;
 	border: 0.5rem solid black;
-	height: 100rem;
+	height: 105rem;
 	background-color: rgba(0, 0, 0, 0.5);
 	color: rgb(255,255,255);
 }
 
+.actions {
+	margin: 0 auto;
+	padding: 3rem 10rem;
+	border: 0.5rem solid white;
+	width: 90%;
+	height: 10rem;
+	background-color: rgba(255,255,255 0.5);
+
+}
+
 .channelContainer {
-	margin: 0rem auto 0rem auto;
+	margin: 0 auto;
 	width: 90%;
 	height: 15rem;
 	background-color: rgba(255,255,255, 0.7);

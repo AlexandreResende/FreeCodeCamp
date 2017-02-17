@@ -12,24 +12,37 @@ html, body {
 	margin: 7rem auto 7rem auto;
 	width: 50%;
 	border: 0.5rem solid black;
-	height: 105rem;
+	height: 40rem;
 	background-color: rgba(0, 0, 0, 0.5);
 	color: rgb(255,255,255);
 }
 
 .actions {
 	margin: 0 auto;
-	padding: 3rem 10rem;
-	border: 0.5rem solid white;
+	padding: 2rem 10rem;
+	border: 0.2rem solid white;
 	width: 90%;
 	height: 10rem;
-	background-color: rgba(255,255,255 0.5);
+	background-color: rgba(255,255,255 0.7);
 
+}
+
+/*centering glyphicons items*/
+.item {
+	text-align: center;
+}
+
+.glyphicon-plus {
+	color: green;
+}
+
+.glyphicon-remove {
+	color: red;
 }
 
 .channelContainer {
 	margin: 0 auto;
 	width: 90%;
 	height: 15rem;
-	background-color: rgba(255,255,255, 0.7);
+	background-color: rgb(255,255,255);
 }

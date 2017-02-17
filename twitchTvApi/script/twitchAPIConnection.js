@@ -18,7 +18,7 @@ function twitchAPIConnection(channelName, channelArrayPosition){
 	})
 	.done(function(data) {
 
-		var element = '#channel' + channelArrayPosition;
+		var element = '#channel' + (channelArrayPosition+1);
 
 		$(element).parent().attr('href', 'https://www.twitch.tv/' + channelName);
 

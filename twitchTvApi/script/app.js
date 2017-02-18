@@ -9,4 +9,8 @@ $(document).ready(function(){
 
 	});
 
+	$('.channelContainer').on('click', function(){
+		$(this).toggleClass('active');
+	});
+
 });

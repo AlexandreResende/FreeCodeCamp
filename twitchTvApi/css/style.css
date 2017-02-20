@@ -41,7 +41,7 @@ html, body {
 }
 
 .channelContainer {
-	margin: 0 auto;
+	margin: 10px auto;
 	width: 90%;
 	height: 15rem;
 	background-color: rgb(255,255,255);

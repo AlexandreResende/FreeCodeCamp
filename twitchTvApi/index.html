@@ -37,8 +37,12 @@
 				<ul class="list-unstyled channelsHolder">
 				
 					<div id="channel1" class="channelContainer">
-						<img  src="https://static-cdn.jtvnw.net/jtv_user_pictures/arteezy-profile_image-f2f55f87a5cd6e15-300x300.png">
-						<a class="btn btn-block" href="https://www.twitch.tv/arteezy" target="_blank">Arteezy</a>
+						<div class="channelImg">
+							<img  src="https://static-cdn.jtvnw.net/jtv_user_pictures/arteezy-profile_image-f2f55f87a5cd6e15-300x300.png">
+						</div>	
+						<div class="channelInfo">
+							<a class="btn btn-block" href="https://www.twitch.tv/arteezy" target="_blank">Arteezy</a>	
+						</div>					
 					</div>
 
 					<!-- element to be inserted when the user clicks on the add button
@@ -56,7 +60,7 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="./script/twitchAPIConnection.js"></script>
-		<script src="./script/twitchAPIViewjs"></script>
+		<script src="./script/twitchAPIView.js"></script>
 		<script src="./script/app.js"></script>
 		<script>
 			setInterval( () => window.location.reload() , 200000);

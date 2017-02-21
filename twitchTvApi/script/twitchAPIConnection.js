@@ -1,9 +1,9 @@
 
 var twitchApplication = {
 
-	twitchChannels: ['arteezy'],//, 'loxodontes', 'quin69', 'riotgamesbrazil', 'brunofin ', 'picoca'];
+	twitchChannels: ['arteezy', 'loxodontes'],//, 'loxodontes', 'quin69', 'riotgamesbrazil', 'brunofin ', 'picoca'];
 
-	connection: function(channel){
+	connection: function(channel, index){
 		var url = 'https://api.twitch.tv/kraken/streams/' + channel;
 
 		$.ajax({
@@ -15,6 +15,8 @@ var twitchApplication = {
 			dataType: 'json',
 		})
 		.done(function(data) {
+
+			twitchAPIView.showChannels(channel, index, data);
 
 			//this function will add the element on the page
 			//via twitchapiview function
@@ -37,7 +39,7 @@ var twitchApplication = {
 	connectAllChannels: function(){
 
 		this.twitchChannels.forEach( (channel, index) => {
-			this.connection(channel);
+			this.connection(channel, index);
 		});
 	},
 

@@ -7,6 +7,7 @@ var twitchAPIView = {
 
 		arrayOfChannels.forEach( (element, index) => {
 
+			//url of the channel
 			var url = 'https://www.twitch.tv/' + element;
 
 			/*
@@ -21,7 +22,7 @@ var twitchAPIView = {
 
 				var div = $('<div id="channel' + (index+1) + '" class="channelContainer"></div>');
 				var anchor = $('<a class="btn btn-block" href="' + url +'" target="_blank">');
-				var img = $();
+				var img = $('<img class="glyphicon glyphicon-remove">');
 
 			}
 

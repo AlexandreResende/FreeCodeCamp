@@ -1,7 +1,7 @@
 
 var twitchApplication = {
 
-	twitchChannels: ['lirik'],//, 'loxodontes', 'quin69', 'riotgamesbrazil', 'brunofin ', 'picoca'];
+	twitchChannels: ['arteezy'],//, 'loxodontes', 'quin69', 'riotgamesbrazil', 'brunofin ', 'picoca'];
 
 	connection: function(channel){
 		var url = 'https://api.twitch.tv/kraken/streams/' + channel;
@@ -15,6 +15,9 @@ var twitchApplication = {
 			dataType: 'json',
 		})
 		.done(function(data) {
+
+			//this function will add the element on the page
+			//via twitchapiview function
 
 			//var element = '#channel' + (channelArrayPosition+1);
 

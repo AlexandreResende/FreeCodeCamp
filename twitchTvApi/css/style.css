@@ -46,3 +46,10 @@ html, body {
 	height: 15rem;
 	background-color: rgb(255,255,255);
 }
+
+.channelContainer img {
+	padding: 0rem 1rem;
+	float: left;
+	width: 40%;
+	height: 90%;
+}

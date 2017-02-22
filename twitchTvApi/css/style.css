@@ -59,11 +59,13 @@ html, body {
 	float: left;
 	width: 30%;
 	height: 100%;
+	background-color: grey;
 }
 
 .channelContainer .channelImg img {
+	margin: 10px auto;
 	padding: 0rem 1rem;
 	width: 100%;
-	height: 100%;
+	height: 90%;
 }
 

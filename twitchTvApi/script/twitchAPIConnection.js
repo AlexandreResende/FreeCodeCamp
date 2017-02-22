@@ -18,14 +18,7 @@ var twitchApplication = {
 
 			twitchAPIView.showChannels(channel, index, data);
 
-			//this function will add the element on the page
-			//via twitchapiview function
-
-			//var element = '#channel' + (channelArrayPosition+1);
-
-			//$(element).parent().attr('href', 'https://www.twitch.tv/' + channel);
-
-			console.log(data);
+			//console.log(data);
 
 		})
 		.fail(function(xhr, error) {

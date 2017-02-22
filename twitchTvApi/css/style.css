@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
 
 html, body {
 	margin: 0;
@@ -52,6 +53,7 @@ html, body {
 	border: 0.3rem solid red;
 	height: 100%;
 	width: 70%;
+	padding-top: 1rem;
 }
 
 .channelImg {
@@ -59,7 +61,16 @@ html, body {
 	float: left;
 	width: 30%;
 	height: 100%;
-	background-color: grey;
+	background-color: white;
+}
+
+.offlineChannel {
+	font-family: 'Orbitron', sans-serif;
+	font-size: 3rem;
+	color: red;
+	line-height: 450%;
+	text-align: center;
+	margin-left: 2rem;
 }
 
 .channelContainer .channelImg img {
@@ -69,3 +80,6 @@ html, body {
 	height: 90%;
 }
 
+.channelContainer .channelInfo a {
+	margin-top: 2rem;
+}

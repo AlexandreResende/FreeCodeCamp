@@ -1,7 +1,7 @@
 
 var twitchApplication = {
 
-	twitchChannels: ['arteezy', 'loxodontes'],//, 'loxodontes', 'quin69', 'riotgamesbrazil', 'brunofin ', 'picoca'];
+	twitchChannels: ['arteezy'],//, 'loxodontes', 'quin69', 'riotgamesbrazil', 'brunofin ', 'picoca'];
 
 	connection: function(channel, index){
 		var url = 'https://api.twitch.tv/kraken/streams/' + channel;
@@ -18,7 +18,7 @@ var twitchApplication = {
 
 			twitchAPIView.showChannels(channel, index, data);
 
-			//console.log(data);
+			console.log(data);
 
 		})
 		.fail(function(xhr, error) {

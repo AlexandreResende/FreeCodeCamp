@@ -13,7 +13,7 @@ var twitchAPIView = {
 		**strem on   => object
 		**stream off => null
 		*/
-		if (data.stream){
+		if (data.stream != null){
 
 			/* example of a channel container
 			<div id="channel1" class="channelContainer">
@@ -30,20 +30,22 @@ var twitchAPIView = {
 
 			div     = $('<div id="channel' + (index+1) + '" class="channelContainer"></div>');
 			divImg  = $('<div class="channelImg"></div>');
-			img     = $('<img class="glyphicon glyphicon-remove">');
-			divInfo = $('<div class="channelInfo"></div>');
-			anchor  = $('<a class="btn btn-block" href="' + url +'" target="_blank">');
+			img     = $('<span class="offlineChannel">Offline</span>');
+			divInfo = $('<div class="channelInfo text-center"></div>');
+			anchor  = $('<a class="text-primary" href="' + url +'" target="_blank">' + channel + '</a>');
 
+			
 			divImg.append(img);
 			divInfo.append(anchor);
 			div.append(divImg).append(divInfo);
-			
 
 		}
 
 		var height = $('.twitch').height();
 		$('.twitch').height( height + 150 );
 		$('.channelsHolder').append(div);
+
+		console.log(div);
 
 	}
 

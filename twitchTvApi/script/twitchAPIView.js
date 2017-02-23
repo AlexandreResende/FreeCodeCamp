@@ -42,10 +42,12 @@ var twitchAPIView = {
 		}
 
 		var height = $('.twitch').height();
-		$('.twitch').height( height + 150 );
-		$('.channelsHolder').append(div);
 
-		console.log(div);
+		if (index){
+			$('.twitch').height( height + 150);
+		}
+
+		$('.channelsHolder').append(div);
 
 	}
 

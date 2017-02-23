@@ -15,7 +15,7 @@ $(document).ready(function(){
 
 	});
 
-	$('removeChannel').on('click', function(){
+	$('.removeChannel').on('click', function(){
 
 		//to be tested and implemented
 		var removeArray = $('.active');

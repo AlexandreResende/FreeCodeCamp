@@ -1,72 +1,71 @@
-
 <!DOCTYPE html>
 <html>
 
-	<head>
+<head>
 
-		<title>Twitch Viewer</title>
-		<meta charset="utf-8">
+    <title>Twitch Viewer</title>
+    <meta charset="utf-8">
 
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-		<link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
 
-	</head>
+</head>
 
-	<body>
+<body>
 
-		<div class="container">
-			<div class="row twitch">
-				<p class="text-center h3">Twitch Channels</p>
+    <div class="container">
+        <div class="row twitch">
+            <p class="text-center h3">Twitch Channels</p>
 
-				<div class="actions">
-					<input class="btn btn-block channelName" type="text" name="channelName" />
-					<div class="item">
-						<span class="btn btn-lg addChannel"><i class="glyphicon glyphicon-plus"></i></span>
-						<span class="btn btn-lg removeChannel"><i class="glyphicon glyphicon-remove"></i></span>
-					</div>
-				</div>
+            <div class="actions">
+                <input class="btn btn-block channelName" type="text" name="channelName" />
+                <div class="item">
+                    <span class="btn btn-lg addChannel"><i class="glyphicon glyphicon-plus"></i></span>
+                    <span class="btn btn-lg removeChannel"><i class="glyphicon glyphicon-remove"></i></span>
+                </div>
+            </div>
 
-				<ul class="list-unstyled channelsHolder">
-				
-					<!--
-					<div id="channel1" class="channelContainer">
-						<div class="channelImg">
-							<img  src="https://static-cdn.jtvnw.net/jtv_user_pictures/arteezy-profile_image-f2f55f87a5cd6e15-300x300.png">
-						</div>	
-						<div class="channelInfo">
-							<a class="btn btn-block" href="https://www.twitch.tv/arteezy" target="_blank">Arteezy</a>	
-						</div>					
-					</div>
-					-->
-					<!-- element to be inserted when the user clicks on the add button
-					<a class="btn btn-block" href="" target="_blank">
-						<div id="channel2" class="channelContainer">
-							<li></li>
-						</div>
-					</a> 
-					-->
-
-				</ul>
-			</div>
-		</div>
+            <ul class="list-unstyled channelsHolder">
 
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src="./script/twitchAPIConnection.js"></script>
-		<script src="./script/twitchAPIView.js"></script>
-		<script src="./script/app.js"></script>
-		<script>
-			setInterval( () => window.location.reload() , 200000);
-		</script>
+                <div id="channel1" class="channelContainer">
+                    <div class="channelImg">
+                        <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/arteezy-profile_image-f2f55f87a5cd6e15-300x300.png">
+                    </div>
+                    <div class="channelInfo">
+                        <a class="btn btn-block" href="https://www.twitch.tv/arteezy" target="_blank">Arteezy</a>
+                    </div>
+                </div>
 
-	</body>
+                element to be inserted when the user clicks on the add button
+                <a class="btn btn-block" href="" target="_blank">
+                    <div id="channel2" class="channelContainer">
+                        <li></li>
+                    </div>
+                </a>
+
+
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="./script/twitchAPIConnection.js"></script>
+    <script src="./script/twitchAPIView.js"></script>
+    <script src="./script/app.js"></script>
+    <script>
+        setInterval(() => window.location.reload(), 200000);
+    </script>
+
+</body>
 
 </html>

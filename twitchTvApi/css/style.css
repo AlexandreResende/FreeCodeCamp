@@ -1,90 +1,90 @@
-
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 @import url('https://fonts.googleapis.com/css?family=Orbitron');
-
-html, body {
-	margin: 0;
-	padding: 0;
-	background-color: rgb(100, 65, 164);
-	font-family: 'Oswald', sans-serif;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(100, 65, 164);
+    font-family: 'Oswald', sans-serif;
 }
 
 .twitch {
-	margin: 7rem auto 7rem auto;
-	width: 50%;
-	border: 0.5rem solid black;
-	height: 40rem;
-	background-color: rgba(0, 0, 0, 0.5);
-	color: rgb(255,255,255);
+    margin: 7rem auto 7rem auto;
+    width: 50%;
+    border: 0.5rem solid black;
+    height: 40rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(255, 255, 255);
 }
 
 .actions {
-	margin: 0 auto;
-	padding: 2rem 10rem;
-	border: 0.2rem solid white;
-	width: 90%;
-	height: 10rem;
-	background-color: rgba(255,255,255 0.7);
-
+    margin: 0 auto;
+    padding: 2rem 10rem;
+    border: 0.2rem solid white;
+    width: 90%;
+    height: 10rem;
+    background-color: rgba(255, 255, 255 0.7);
 }
 
+
 /*centering glyphicons items*/
+
 .item {
-	text-align: center;
+    text-align: center;
 }
 
 .glyphicon-plus {
-	color: green;
+    color: green;
 }
 
 .glyphicon-remove {
-	color: red;
+    color: red;
 }
 
 .channelContainer {
-	margin: 10px auto;
-	width: 90%;
-	height: 15rem;
-	background-color: rgb(255,255,255);
+    margin: 10px auto;
+    width: 90%;
+    height: 15rem;
+    background-color: rgb(255, 255, 255);
 }
 
 .channelInfo {
-	float: right;
-	border: 0.3rem solid red;
-	height: 100%;
-	width: 70%;
-	padding-top: 1rem;
-	background-color: rgba(100,100,10,1);
+    float: right;
+    border: 0.3rem solid red;
+    height: 100%;
+    width: 70%;
+    padding-top: 2rem;
+    background-color: rgba(100, 100, 10, 1);
 }
 
 .channelImg {
-	border: 0.3rem solid black;
-	float: left;
-	width: 30%;
-	height: 100%;
-	background-color: rgba(100,100,10,1);
+    border: 0.3rem solid black;
+    float: left;
+    width: 30%;
+    height: 100%;
+    background-color: rgba(100, 100, 10, 1);
 }
 
 .offlineChannel {
-	font-family: 'Orbitron', sans-serif;
-	font-size: 3rem;
-	color: red;
-	line-height: 450%;
-	text-align: center;
-	margin-left: 2rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: red;
+    line-height: 450%;
+    text-align: center;
+    margin-left: 2rem;
 }
 
 .channelContainer .channelImg img {
-	margin: 10px auto;
-	padding: 0rem 1rem;
-	width: 100%;
-	height: 90%;
+    margin: 10px auto;
+    padding: 0rem 1rem;
+    width: 100%;
+    height: 90%;
 }
 
 .channelContainer .channelInfo a {
-	margin-top: 2rem;
+    margin-top: 2rem;
 }
 
 .active {
-	border: 1rem solid orange;
+    border: 1rem solid orange;
 }

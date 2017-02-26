@@ -6,6 +6,7 @@ var twitchAPIView = {
 
         //url of the channel
         var url = 'https://www.twitch.tv/' + channel;
+        //html elements variables
         var div, divImg, img, divInfo, anchor, game, status;
 
         /*
@@ -13,17 +14,6 @@ var twitchAPIView = {
          **stream off => null
          */
         if (data.stream != null) {
-
-            /* example of a channel container
-            <div id="channel1" class="channelContainer">
-            	<div class="channelImg">
-            		<img  src="https://static-cdn.jtvnw.net/jtv_user_pictures/arteezy-profile_image-f2f55f87a5cd6e15-300x300.png">
-            	</div>	
-            	<div class="channelInfo">
-            		<a class="btn btn-block" href="https://www.twitch.tv/arteezy" target="_blank">Arteezy</a>	
-            	</div>					
-            </div>
-            */
 
             div = $('<div id="channel' + (index + 1) + '" class="channelContainer"></div>');
             divImg = $('<div class="channelImg"></div>');

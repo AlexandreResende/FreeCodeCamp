@@ -1,32 +1,35 @@
+$(document).ready(function() {
 
-$(document).ready(function(){
+    twitchApplication.connectAllChannels();
 
-	twitchApplication.connectAllChannels();
+    console.log('Logged...');
 
-	$('.channelContainer').on('click', function(){
-		$(this).toggleClass('active');
-	});
+    $('.channelInfo').on('click', function() {
+        console.log(this);
+    });
 
-	$('.addChannel').on('click', function() {
-		
-		var channelName = $('.channelName').value();
+    $('.addChannel').on('click', function() {
 
-		twitchApplication.addChannel(channelName);
+        var channelName = $('.channelName').value();
 
-	});
+        twitchApplication.addChannel(channelName);
 
-	$('.removeChannel').on('click', function(){
+    });
 
-		//to be tested and implemented
-		var removeArray = $('.active');
-		var removeChannels = [];
+    $('.removeChannel').on('click', function() {
 
-		removeArray.forEach( element => {
-			removeChannels.push(element.value());
-		});
+        //add an X on each div channel to remove it
 
-		twitchApplication.removeChannels(removeChannels);
+        //to be tested and implemented
+        var removeArray = $('.active');
+        var removeChannels = [];
 
-	});
+        removeArray.forEach(element => {
+            removeChannels.push(element.value());
+        });
+
+        twitchApplication.removeChannels(removeChannels);
+
+    });
 
 });

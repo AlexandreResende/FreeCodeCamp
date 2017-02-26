@@ -7,7 +7,9 @@ var twitchAPIView = {
         //url of the channel
         var url = 'https://www.twitch.tv/' + channel;
         //html elements variables
-        var div, divImg, img, divInfo, anchor, game, status;
+        var div, divImg, img, divInfo, anchor, game, status, removeButton;
+
+        removeButton = $('<button class="btn btn-md btn-default removeChannel"><i class="glyphicon glyphicon-remove"></i></button>');
 
         /*
          **strem on   => object
@@ -24,7 +26,7 @@ var twitchAPIView = {
             status = $('<p> Status: ' + data.stream.channel.status + '</p>');
 
             divImg.append(img);
-            divInfo.append(anchor).append(game).append(status);
+            divInfo.append(anchor).append(game).append(status).append(removeButton);
             div.append(divImg).append(divInfo);
 
 
@@ -38,7 +40,7 @@ var twitchAPIView = {
 
 
             divImg.append(img);
-            divInfo.append(anchor);
+            divInfo.append(anchor).append(removeButton);
             div.append(divImg).append(divInfo);
 
         }

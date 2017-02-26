@@ -10,7 +10,7 @@ $(document).ready(function() {
 
     $('.addChannel').on('click', function() {
 
-        var channelName = $('.channelName').value();
+        var channelName = $('.channelName').val();
 
         twitchApplication.addChannel(channelName);
 
@@ -18,17 +18,8 @@ $(document).ready(function() {
 
     $('.removeChannel').on('click', function() {
 
-        //add an X on each div channel to remove it
-
-        //to be tested and implemented
-        var removeArray = $('.active');
-        var removeChannels = [];
-
-        removeArray.forEach(element => {
-            removeChannels.push(element.value());
-        });
-
-        twitchApplication.removeChannels(removeChannels);
+        //not working need fix
+        console.log(this.parent());
 
     });
 

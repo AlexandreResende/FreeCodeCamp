@@ -1,6 +1,6 @@
 var twitchApplication = {
 
-    twitchChannels: ['summit1g'], //, 'loxodontes', 'quin69', 'riotgamesbrazil', 'brunofin ', 'picoca'];
+    twitchChannels: [], //, 'loxodontes', 'quin69', 'riotgamesbrazil', 'brunofin ', 'picoca'];
 
     connection: function(channel, index) {
         var url = 'https://api.twitch.tv/kraken/streams/' + channel;
@@ -38,6 +38,10 @@ var twitchApplication = {
     addChannel: function(channelName) {
         this.twitchChannels.push(channelName);
         console.log(this.twitchChannels);
+        //removing ann children of the ul element - channelsHolder
+        $('.channelsHolder').children().remove();
+        //adding all the elements again
+        this.connectAllChannels();
     },
 
     removeChannel: function(channelNameArray, channelsArray) {

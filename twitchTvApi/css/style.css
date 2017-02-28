@@ -12,7 +12,7 @@ body {
     margin: 7rem auto 7rem auto;
     width: 50%;
     border: 0.5rem solid black;
-    height: 40rem;
+    height: 240px;
     background-color: rgba(0, 0, 0, 0.5);
     color: rgb(255, 255, 255);
 }
@@ -42,9 +42,9 @@ body {
 }
 
 .channelContainer {
-    margin: 10px auto;
+    margin: 10px auto 0 auto;
     width: 90%;
-    height: 15rem;
+    height: 150px;
     background-color: rgb(255, 255, 255);
 }
 

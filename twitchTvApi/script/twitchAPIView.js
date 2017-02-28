@@ -36,7 +36,7 @@ var twitchAPIView = {
             divImg = $('<div class="channelImg"></div>');
             img = $('<span class="offlineChannel">Offline</span>');
             divInfo = $('<div class="channelInfo text-center"></div>');
-            anchor = $('<a class="text-primary" href="' + url + '" target="_blank">' + channel + '</a>');
+            anchor = $('<a class="text-primary" href="' + url + '" target="_blank">' + channel + '</a></br>');
 
 
             divImg.append(img);
@@ -46,11 +46,9 @@ var twitchAPIView = {
         }
 
         var height = $('.twitch').height();
-
-        if (index) {
-            $('.twitch').height(height + 150);
-        }
-
+        console.log(height);
+        $('.twitch').height(height + 150);
+        console.log($('.twitch').height());
         $('.channelsHolder').append(div);
 
     }

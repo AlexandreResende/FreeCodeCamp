@@ -42,6 +42,7 @@ var twitchApplication = {
         $('.channelsHolder').children().remove();
         //adding all the elements again
         this.connectAllChannels();
+        $('.channelName').val('');
     },
 
     removeChannel: function(channelNameArray, channelsArray) {

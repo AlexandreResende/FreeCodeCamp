@@ -10,6 +10,10 @@ $(document).ready(function() {
 
     $('.addChannel').on('click', function() {
 
+        //reseting the .twitch height so we wont
+        //get any container bigger than it should
+        $('.twitch').height(240);
+
         var channelName = $('.channelName').val();
 
         twitchApplication.addChannel(channelName);

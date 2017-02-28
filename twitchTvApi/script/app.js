@@ -20,10 +20,16 @@ $(document).ready(function() {
 
     });
 
+    //adding/removing the active class to a channelContainer
+    $(document.body).on('click', '.channelContainer', function() {
+        $(this).toggleClass('active');
+    });
+
+    // event for click on removeChannel button
     $('.removeChannel').on('click', function() {
 
-        //not working need fix
-        console.log(this.parent());
+        var channelsToRemove = document.getElementsByClassName('active');
+        twitchApplication.removeChannel(channelsToRemove);
 
     });
 

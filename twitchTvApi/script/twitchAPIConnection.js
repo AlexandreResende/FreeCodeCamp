@@ -35,23 +35,42 @@ var twitchApplication = {
         });
     },
 
+    /*
+     ** param: channelName
+     ** return: -
+     ** this function adds a channelName to the 
+     ** twitchChannels list
+     */
     addChannel: function(channelName) {
-        this.twitchChannels.push(channelName);
-        console.log(this.twitchChannels);
-        //removing ann children of the ul element - channelsHolder
-        $('.channelsHolder').children().remove();
-        //adding all the elements again
-        this.connectAllChannels();
-        $('.channelName').val('');
+
+        if (channelName) {
+            this.twitchChannels.push(channelName);
+            console.log(this.twitchChannels);
+            //removing ann children of the ul element - channelsHolder
+            $('.channelsHolder').children().remove();
+            //adding all the elements again
+            this.connectAllChannels();
+            $('.channelName').val('');
+        } else {
+            alert('Please, type a twitch channel name.');
+        }
+
     },
 
-    removeChannel: function(channelNameArray, channelsArray) {
-        channelNameArray.forEach(element => {
-            var position = channelsArray.indexOf(element);
-            channelsArray.splice(position, 1);
-        });
-        //currently working
-        console.log(this.twitchChannels);
+    /*
+     ** param: channelNameList
+     ** return: -
+     ** this function will remove all the channelsContainers
+     ** with the active class and will resize the twitch class
+     ** div
+     */
+    removeChannel: function(channelNameList) {
+
+        for (element of channelNameList) {
+            var height = $('.twitch').height();
+            element.remove();
+            $('.twitch').height(height - 150);
+        }
     }
 
 };

@@ -1,6 +1,6 @@
 var twitchApplication = {
 
-    twitchChannels: [], //, 'loxodontes', 'quin69', 'riotgamesbrazil', 'brunofin ', 'picoca'];
+    twitchChannels: ['freecodecamp'],
 
     connection: function(channel, index) {
         var url = 'https://api.twitch.tv/kraken/streams/' + channel;
@@ -16,8 +16,6 @@ var twitchApplication = {
             .done(function(data) {
 
                 twitchAPIView.showChannels(channel, index, data);
-
-                console.log(data);
 
             })
             .fail(function(xhr, error) {
@@ -43,17 +41,18 @@ var twitchApplication = {
      */
     addChannel: function(channelName) {
 
-        if (channelName) {
-            this.twitchChannels.push(channelName);
-            console.log(this.twitchChannels);
-            //removing ann children of the ul element - channelsHolder
-            $('.channelsHolder').children().remove();
-            //adding all the elements again
-            this.connectAllChannels();
-            $('.channelName').val('');
-        } else {
-            alert('Please, type a twitch channel name.');
-        }
+        this.twitchChannels.push(channelName);
+        //console.log(this.twitchChannels);
+
+        //removing an children of the ul element - channelsHolder
+        //to do not have duplicate channels after the new connection
+        $('.channelsHolder').children().remove();
+
+        //adding all the elements again
+        this.connectAllChannels();
+
+        //erasing the label
+        $('.channelName').val('');
 
     },
 
@@ -66,9 +65,9 @@ var twitchApplication = {
      */
     removeChannel: function(channelNameList) {
 
-        for (element of channelNameList) {
+        for (element in channelNameList) {
             var height = $('.twitch').height();
-            element.remove();
+            channelNameList[element].remove();
             $('.twitch').height(height - 150);
         }
     }

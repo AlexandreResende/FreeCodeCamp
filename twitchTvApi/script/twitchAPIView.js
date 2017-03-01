@@ -43,9 +43,9 @@ var twitchAPIView = {
         }
 
         //getting the height of the .twitch div
-        height = $('.twitch').height();
+        //height = $('.twitch').height();
         //resizing it
-        $('.twitch').height(height + 150);
+        //$('.twitch').height(height + 150);
 
         $('.channelsHolder').append(div);
 

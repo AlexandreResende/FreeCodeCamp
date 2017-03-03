@@ -1,6 +1,6 @@
 var twitchApplication = {
 
-    twitchChannels: ['freecodecamp'],
+    twitchChannels: [],
 
     connection: function(channel, index) {
         var url = 'https://api.twitch.tv/kraken/streams/' + channel;
@@ -31,6 +31,8 @@ var twitchApplication = {
         this.twitchChannels.forEach((channel, index) => {
             this.connection(channel, index);
         });
+        //resizing the twitch div
+        $('.twitch').height(240 + this.twitchChannels.length * 150);
     },
 
     /*
@@ -54,6 +56,8 @@ var twitchApplication = {
         //erasing the label
         $('.channelName').val('');
 
+        console.log(this.twitchChannels);
+
     },
 
     /*
@@ -65,11 +69,27 @@ var twitchApplication = {
      */
     removeChannel: function(channelNameList) {
 
-        for (element in channelNameList) {
-            var height = $('.twitch').height();
-            channelNameList[element].remove();
-            $('.twitch').height(height - 150);
+        for (var element = channelNameList.length - 1; element >= 0; element--) {
+            //getting the index position of the element to be deleted
+            //we are retrieving the id of the element, parsing it to substring
+            //using the substring function to get only the number that -1 will
+            //be the position of the element in the list twitchChannels
+            var elementId = parseInt($(channelNameList[element]).attr('id').toString().substring(7));
+            console.log(elementId - 1);
+            //removing the element of the DOM
+            //channelNameList[element].remove();
+            //removing the element in the list twitchChannels
+            this.twitchChannels.splice(elementId - 1, 1);
+
+            //console.log(this.twitchChannels);
         }
+
+        //removing an children of the ul element - channelsHolder
+        //to do not have duplicate channels after the new connection
+        $('.channelsHolder').children().remove();
+
+        //adding all the elements again
+        this.connectAllChannels();
     }
 
 };

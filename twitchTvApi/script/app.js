@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     twitchApplication.connectAllChannels();
     //resizing twitch div
-    $('.twitch').height(240 + twitchApplication.twitchChannels.length * 150);
+    $('.twitch').height(240 + twitchApplication.twitchChannels.length * 170);
 
     //console.log('Logged...');
 

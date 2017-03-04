@@ -28,10 +28,10 @@ var twitchApplication = {
 
     connectAllChannels: function() {
 
-        this.twitchChannels.forEach((channel, index) => {
-            this.connection(channel, index);
-        });
-        //resizing the twitch div
+        for (var ans = 0; ans < this.twitchChannels.length; ans++){
+            this.connection(this.twitchChannels[ans], ans);
+        }
+
         $('.twitch').height(240 + this.twitchChannels.length * 150);
     },
 
@@ -69,21 +69,46 @@ var twitchApplication = {
      */
     removeChannel: function(channelNameList) {
 
+        //index of the channels to be removed
+        var channelRemoveIndex = [];
+
+        for (var element = 0; element < channelNameList.length; element++){
+            //getting the index of the element in the twitchChannels list
+            var channelIndex = $(channelNameList[element]).attr('id').toString().substring(7);
+            channelRemoveIndex.push(channelIndex-1);
+        }
+
+        //sorting the list in descending order
+        channelRemoveIndex.sort( (a,b) => b-a);
+
+        for (var element = 0; element < channelRemoveIndex.length; element++){
+            //removing the channel of the list
+            //using the index of the element instead of  the indexOf with
+            //the name of the channel
+            this.twitchChannels.splice(channelRemoveIndex[element], 1);
+        }
+
+        /*
         for (var element = channelNameList.length - 1; element >= 0; element--) {
             //getting the index position of the element to be deleted
             //we are retrieving the id of the element, parsing it to substring
             //using the substring function to get only the number that -1 will
             //be the position of the element in the list twitchChannels
-            var elementId = parseInt($(channelNameList[element]).attr('id').toString().substring(7));
-            console.log(elementId - 1);
+            var channelName = $($($($(channelNameList[element]).children())[1]).children()[0]).html();
+            //console.log($($($($(channelNameList[element]).children())[1]).children()[0]).html());
+            
+            var index = this.twitchChannels.indexOf(channelName);
+
+            //var elementId = parseInt($(channelNameList[element]).attr('id').toString().substring(7));
+            //console.log(elementId - 1);
             //removing the element of the DOM
             //channelNameList[element].remove();
             //removing the element in the list twitchChannels
-            this.twitchChannels.splice(elementId - 1, 1);
+            this.twitchChannels.splice(index, 1);
 
             //console.log(this.twitchChannels);
         }
-
+        */
         //removing an children of the ul element - channelsHolder
         //to do not have duplicate channels after the new connection
         $('.channelsHolder').children().remove();

@@ -1,16 +1,18 @@
 $(document).ready(function() {
 
-    twitchApplication.connectAllChannels();
+    //twitchApplication.connectAllChannels();
     //resizing twitch div
     $('.twitch').height(240 + twitchApplication.twitchChannels.length * 170);
 
-    //console.log('Logged...');
-
     $('.addChannel').on('click', function() {
 
+        //getting the channelName inputed by the user
         var channelName = $('.channelName').val();
+
         if (channelName) {
             twitchApplication.addChannel(channelName);
+            //connecting the last channel added
+            twitchApplication.connection();
         } else {
             alert('Please, type a twitch channel name.');
         }

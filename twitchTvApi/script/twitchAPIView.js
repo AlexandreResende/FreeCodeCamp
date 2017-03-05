@@ -42,7 +42,7 @@ var twitchAPIView = {
 
         }
 
-        $('.channelsHolder').prepend(div);
+        $('.channelsHolder').append(div);
 
     }
 

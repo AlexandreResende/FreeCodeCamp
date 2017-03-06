@@ -3,12 +3,12 @@ var twitchApplication = {
     twitchChannels: [],
 
     //used to be channel and index teh parameters
-    connection: function() {
+    connection: function(index = this.twitchChannels.length - 1) {
 
         //channel name
-        var ch = this.twitchChannels[this.twitchChannels.length - 1];
+        var ch = this.twitchChannels[index];
         //index of the channel
-        var idx = this.twitchChannels.length - 1;
+        var idx = index;
         var url = 'https://api.twitch.tv/kraken/streams/' + ch;
 
         $.ajax({
@@ -39,7 +39,7 @@ var twitchApplication = {
     connectAllChannels: function() {
 
         for (var ans = 0; ans < this.twitchChannels.length; ans++) {
-            this.connection();
+            this.connection(ans);
         }
 
     },
@@ -93,6 +93,11 @@ var twitchApplication = {
 
         //adding all the elements again
         this.connectAllChannels();
+        console.log(this.twitchChannels);
+        if (!this.twitchChannels.length) {
+            $('.twitch').height(240 + this.twitchChannels.length * 160);
+        }
+
     }
 
 };

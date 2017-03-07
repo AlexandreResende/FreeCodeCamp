@@ -1,6 +1,6 @@
 var twitchApplication = {
 
-    twitchChannels: [],
+    twitchChannels: [], //'freecodecamp', 'brunofin'
 
     //used to be channel and index teh parameters
     connection: function(index = this.twitchChannels.length - 1) {
@@ -9,8 +9,8 @@ var twitchApplication = {
         var ch = this.twitchChannels[index];
         //index of the channel
         var idx = index;
-        var url = 'https://api.twitch.tv/kraken/streams/' + ch;
-
+        var url = 'https://api.twitch.tv/kraken/channels/' + ch;
+        //'https://api.twitch.tv/kraken/streams/'
         $.ajax({
                 url: url,
                 headers: {
@@ -21,6 +21,7 @@ var twitchApplication = {
             })
             .done(function(data) {
 
+                console.log(data);
                 twitchAPIView.showChannels(ch, idx, data);
 
                 //resizing the twitch div
@@ -30,6 +31,8 @@ var twitchApplication = {
             })
             .fail(function(xhr, error) {
                 console.log('An error occured: ' + error);
+                //insert error 404 on the channel here....
+                //DOM element for that situation
             })
             .always(function() {
                 console.log("Something happened...");

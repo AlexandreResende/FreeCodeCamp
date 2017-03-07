@@ -3,6 +3,8 @@ $(document).ready(function() {
     //twitchApplication.connectAllChannels();
     //resizing twitch div
     $('.twitch').height(240 + twitchApplication.twitchChannels.length * 170);
+    //connecting all pre defined channels
+    twitchApplication.connectAllChannels();
 
     $('.addChannel').on('click', function() {
 

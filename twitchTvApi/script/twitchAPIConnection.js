@@ -3,13 +3,13 @@ var twitchApplication = {
     twitchChannels: [], //'freecodecamp', 'brunofin'
 
     //used to be channel and index teh parameters
-    connection: function(index = this.twitchChannels.length - 1) {
+    connectionStream: function(index = this.twitchChannels.length - 1) {
 
         //channel name
         var ch = this.twitchChannels[index];
         //index of the channel
         var idx = index;
-        var url = 'https://api.twitch.tv/kraken/channels/' + ch;
+        var url = 'https://api.twitch.tv/kraken/streams/' + ch;
         //'https://api.twitch.tv/kraken/streams/'
         $.ajax({
                 url: url,
@@ -33,16 +33,44 @@ var twitchApplication = {
                 console.log('An error occured: ' + error);
                 //insert error 404 on the channel here....
                 //DOM element for that situation
-            })
-            .always(function() {
-                console.log("Something happened...");
             });
+    },
+
+    connectionChannel: function(index = this.twitchChannels.length - 1) {
+
+        //channel name
+        var ch = this.twitchChannels[index];
+        //index of the channel
+        var idx = index;
+        var url = 'https://api.twitch.tv/kraken/channels/' + ch;
+
+        $.ajax({
+                url: url,
+                headers: {
+                    'Client-ID': 'z6qd7dtxvbs8oz6yik78d9yci86xsf'
+                },
+                type: 'GET',
+                dataType: 'json',
+            })
+            .done(function(data) {
+                return true;
+            })
+            .fail(function(xhr, error) {
+                twitchAPIView.showChannelsInexistent(ch, idx);
+                return false;
+            });
+
     },
 
     connectAllChannels: function() {
 
         for (var ans = 0; ans < this.twitchChannels.length; ans++) {
-            this.connection(ans);
+            if (this.connectionChannel(ans)) {
+                this.connectionStream(ans);
+            } else {
+
+            }
+
         }
 
     },

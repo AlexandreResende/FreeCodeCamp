@@ -14,7 +14,7 @@ $(document).ready(function() {
         if (channelName) {
             twitchApplication.addChannel(channelName);
             //connecting the last channel added
-            twitchApplication.connection();
+            twitchApplication.connectionStream();
         } else {
             alert('Please, type a twitch channel name.');
         }

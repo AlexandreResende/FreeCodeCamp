@@ -44,6 +44,13 @@ var twitchAPIView = {
 
         $('.channelsHolder').append(div);
 
+    },
+
+    showChannelsInexistent: function(channel, index) {
+
+        //channelImg - a big X 
+        //channel Info - 404 channel not found and some additional information
+
     }
 
 }

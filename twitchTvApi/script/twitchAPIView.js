@@ -2,12 +2,10 @@ var twitchAPIView = {
 
     showChannels: function(channel, index, data) {
 
-        var containerOfChannels = [];
-
         //url of the channel
         var url = 'https://www.twitch.tv/' + channel;
         //html elements variables
-        var div, divImg, img, divInfo, anchor, game, status, height;
+        var div, divImg, img, divInfo, anchor, game, status;
 
         /*
          **strem on   => object
@@ -50,6 +48,24 @@ var twitchAPIView = {
 
         //channelImg - a big X 
         //channel Info - 404 channel not found and some additional information
+
+        //stream does not exist
+        //html elements variables
+        var div, divImg, img, divInfo, channel;
+
+        div = $('<div id="channel' + (index + 1) + '" class="channelContainer"></div>');
+        divImg = $('<div class="channelImg"></div>');
+        //add 404 img here
+        img = $('<img src="' + data.stream.channel.logo + '" alt="' + channel + '" >');
+        divInfo = $('<div class="channelInfo text-center"></div>');
+        //add a paragraph with the info of channel does not exist
+        channel = $('<p>' + data.stream.channel.game + '</p>');
+
+        divImg.append(img);
+        divInfo.append(channel);
+        div.append(divImg).append(divInfo);
+
+        $('.channelsHolder').append(div);
 
     }
 

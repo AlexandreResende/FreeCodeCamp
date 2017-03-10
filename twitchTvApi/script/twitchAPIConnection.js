@@ -27,7 +27,6 @@ var twitchApplication = {
                 //resizing the twitch div
                 $('.twitch').height(240 + (idx + 1) * 160);
 
-
             })
             .fail(function(xhr, error) {
                 console.log('An error occured: ' + error);
@@ -53,11 +52,10 @@ var twitchApplication = {
                 dataType: 'json',
             })
             .done(function(data) {
-                return true;
+                //call connectionStream...
             })
             .fail(function(xhr, error) {
                 twitchAPIView.showChannelsInexistent(ch, idx);
-                return false;
             });
 
     },

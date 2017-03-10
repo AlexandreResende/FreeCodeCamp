@@ -46,20 +46,16 @@ var twitchAPIView = {
 
     showChannelsInexistent: function(channel, index) {
 
-        //channelImg - a big X 
-        //channel Info - 404 channel not found and some additional information
-
-        //stream does not exist
         //html elements variables
         var div, divImg, img, divInfo, channel;
 
         div = $('<div id="channel' + (index + 1) + '" class="channelContainer"></div>');
         divImg = $('<div class="channelImg"></div>');
         //add 404 img here
-        img = $('<img src="' + data.stream.channel.logo + '" alt="' + channel + '" >');
+        img = $('<img src="http://www.submitawebsite.com/blog/wp-content/uploads/2010/06/404.png" alt="notFound" >');
         divInfo = $('<div class="channelInfo text-center"></div>');
         //add a paragraph with the info of channel does not exist
-        channel = $('<p>' + data.stream.channel.game + '</p>');
+        channel = $('<p>Channel not found!</p><p>This channel was deleted or does not exist!</p>');
 
         divImg.append(img);
         divInfo.append(channel);

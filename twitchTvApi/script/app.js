@@ -13,8 +13,12 @@ $(document).ready(function() {
 
         if (channelName) {
             twitchApplication.addChannel(channelName);
+
             //connecting the last channel added
-            twitchApplication.connectionStream();
+            //add the channel div to the channelHolder
+            //or add the 404 channel does not exist div
+            twitchApplication.connectionChannel();
+
         } else {
             alert('Please, type a twitch channel name.');
         }

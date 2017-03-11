@@ -4,7 +4,7 @@ $(document).ready(function() {
     //resizing twitch div
     $('.twitch').height(240 + twitchApplication.twitchChannels.length * 170);
     //connecting all pre defined channels
-    twitchApplication.connectAllChannels();
+    //twitchApplication.connectAllChannels();
 
     $('.addChannel').on('click', function() {
 
@@ -12,11 +12,8 @@ $(document).ready(function() {
         var channelName = $('.channelName').val();
 
         if (channelName) {
-            twitchApplication.addChannel(channelName);
 
-            //connecting the last channel added
-            //add the channel div to the channelHolder
-            //or add the 404 channel does not exist div
+            twitchApplication.addChannel(channelName);
             twitchApplication.connectionChannel();
 
         } else {

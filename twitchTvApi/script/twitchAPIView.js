@@ -44,7 +44,7 @@ var twitchAPIView = {
 
     },
 
-    showChannelsInexistent: function(channel, index) {
+    showChannelsInexistent: function(index) {
 
         //html elements variables
         var div, divImg, img, divInfo, channel;

@@ -3,14 +3,15 @@ var twitchApplication = {
     twitchChannels: [], //'freecodecamp', 'brunofin'
 
     //used to be channel and index teh parameters
-    connectionStream: function(index = this.twitchChannels.length - 1) {
+    connectionStream: function(index = twitchApplication.twitchChannels.length - 1) {
 
+        var twitchChannels = twitchApplication.twitchChannels;
         //channel name
-        var ch = this.twitchChannels[index];
+        var ch = twitchChannels[twitchChannels.length - 1];
         //index of the channel
         var idx = index;
         var url = 'https://api.twitch.tv/kraken/streams/' + ch;
-        //'https://api.twitch.tv/kraken/streams/'
+
         $.ajax({
                 url: url,
                 headers: {
@@ -21,7 +22,6 @@ var twitchApplication = {
             })
             .done(function(data) {
 
-                console.log(data);
                 twitchAPIView.showChannels(ch, idx, data);
 
                 //resizing the twitch div
@@ -29,9 +29,10 @@ var twitchApplication = {
 
             })
             .fail(function(xhr, error) {
-                console.log('An error occured: ' + error);
+                //console.log('An error occured: ' + error);
                 //insert error 404 on the channel here....
                 //DOM element for that situation
+                twitchAPIView.showChannelsInexistentch(ch, idx);
             });
     },
 
@@ -42,6 +43,7 @@ var twitchApplication = {
         //index of the channel
         var idx = index;
         var url = 'https://api.twitch.tv/kraken/channels/' + ch;
+        var connectionStream = this.connectionStream;
 
         $.ajax({
                 url: url,
@@ -53,9 +55,14 @@ var twitchApplication = {
             })
             .done(function(data) {
                 //call connectionStream...
+                connectionStream();
+
             })
-            .fail(function(xhr, error) {
-                twitchAPIView.showChannelsInexistent(ch, idx);
+            .fail(function(xhr, err, errorThrown) {
+                twitchAPIView.showChannelsInexistent(idx);
+
+                //resizing the twitch div
+                $('.twitch').height(240 + (idx + 1) * 160);
             });
 
     },
@@ -82,7 +89,7 @@ var twitchApplication = {
     addChannel: function(channelName) {
 
         this.twitchChannels.push(channelName);
-
+        console.log(this.twitchChannels);
         //erasing the label
         $('.channelName').val('');
 
@@ -102,6 +109,7 @@ var twitchApplication = {
 
         for (var element = 0; element < channelNameList.length; element++) {
             //getting the index of the element in the twitchChannels list
+            console.log($(channelNameList[element]).attr('id').toString());
             var channelIndex = $(channelNameList[element]).attr('id').toString().substring(7);
             channelRemoveIndex.push(channelIndex - 1);
         }

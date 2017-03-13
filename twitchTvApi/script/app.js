@@ -1,3 +1,19 @@
+/*
+problems with the remove channel
+after a deletion it is displaying
+the wrongs channels
+
+analyze the twitchApplication.twitchChannels
+scope because it is not possible to use it
+inside the ajax functions call
+
+need refactoring - the functions are not good enough
+probably it will be better if I make an schema and code again
+some parts of the project
+
+the view part
+*/
+
 $(document).ready(function() {
 
     //twitchApplication.connectAllChannels();

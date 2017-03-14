@@ -1,5 +1,12 @@
 var twitchAPIView = {
 
+    resizeTwitchDiv: function() {
+
+        //resizing twitch div
+        $('.twitch').height(240 + twitchApplication.twitchChannels.length * 170);
+
+    },
+
     showChannels: function(channel, index, data) {
 
         //url of the channel

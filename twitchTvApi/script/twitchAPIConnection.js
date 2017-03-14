@@ -62,20 +62,16 @@ var twitchApplication = {
                 twitchAPIView.showChannelsInexistent(idx);
 
                 //resizing the twitch div
-                $('.twitch').height(240 + (idx + 1) * 160);
+                twitchAPIView.resizeTwitchDiv();
             });
 
     },
 
     connectAllChannels: function() {
-
+        //changed
         for (var ans = 0; ans < this.twitchChannels.length; ans++) {
-            if (this.connectionChannel(ans)) {
-                this.connectionStream(ans);
-            } else {
-
-            }
-
+            console.log('aki ' + this.twitchChannels[ans]);
+            this.connectionChannel(ans);
         }
 
     },
@@ -132,7 +128,7 @@ var twitchApplication = {
         this.connectAllChannels();
         console.log(this.twitchChannels);
         if (!this.twitchChannels.length) {
-            $('.twitch').height(240 + this.twitchChannels.length * 160);
+            twitchAPIView.resizeTwitchDiv();
         }
 
     }

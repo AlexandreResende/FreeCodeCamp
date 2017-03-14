@@ -18,7 +18,7 @@ $(document).ready(function() {
 
     //twitchApplication.connectAllChannels();
     //resizing twitch div
-    $('.twitch').height(240 + twitchApplication.twitchChannels.length * 170);
+    twitchAPIView.resizeTwitchDiv();
     //connecting all pre defined channels
     //twitchApplication.connectAllChannels();
 

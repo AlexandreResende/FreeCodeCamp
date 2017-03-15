@@ -12,6 +12,8 @@ var twitchApplication = {
         var idx = index;
         var url = 'https://api.twitch.tv/kraken/streams/' + ch;
 
+        console.log('At connect stream.\nIndex: ' + idx + ' Channel: ' + ch);
+
         $.ajax({
                 url: url,
                 headers: {
@@ -45,6 +47,8 @@ var twitchApplication = {
         var url = 'https://api.twitch.tv/kraken/channels/' + ch;
         var connectionStream = this.connectionStream;
 
+        console.log('At connect channels.\nIndex: ' + idx + ' Channel: ' + ch);
+
         $.ajax({
                 url: url,
                 headers: {
@@ -55,7 +59,9 @@ var twitchApplication = {
             })
             .done(function(data) {
                 //call connectionStream...
-                connectionStream();
+                //console.log(idx);
+                //console.log(twitchApplication.twitchChannels);
+                connectionStream(idx);
 
             })
             .fail(function(xhr, err, errorThrown) {
@@ -69,8 +75,8 @@ var twitchApplication = {
 
     connectAllChannels: function() {
         //changed
-        for (var ans = 0; ans < this.twitchChannels.length; ans++) {
-            console.log('aki ' + this.twitchChannels[ans]);
+        for (let ans = 0; ans < this.twitchChannels.length; ans++) {
+            //console.log('aki ' + this.twitchChannels[ans]);
             this.connectionChannel(ans);
         }
 
@@ -85,7 +91,7 @@ var twitchApplication = {
     addChannel: function(channelName) {
 
         this.twitchChannels.push(channelName);
-        console.log(this.twitchChannels);
+        //console.log(this.twitchChannels);
         //erasing the label
         $('.channelName').val('');
 
@@ -105,7 +111,7 @@ var twitchApplication = {
 
         for (var element = 0; element < channelNameList.length; element++) {
             //getting the index of the element in the twitchChannels list
-            console.log($(channelNameList[element]).attr('id').toString());
+            //console.log($(channelNameList[element]).attr('id').toString());
             var channelIndex = $(channelNameList[element]).attr('id').toString().substring(7);
             channelRemoveIndex.push(channelIndex - 1);
         }
@@ -126,7 +132,7 @@ var twitchApplication = {
 
         //adding all the elements again
         this.connectAllChannels();
-        console.log(this.twitchChannels);
+        //console.log(this.twitchChannels);
         if (!this.twitchChannels.length) {
             twitchAPIView.resizeTwitchDiv();
         }

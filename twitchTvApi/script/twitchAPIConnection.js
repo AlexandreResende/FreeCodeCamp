@@ -3,7 +3,7 @@ var twitchApplication = {
     twitchChannels: [], //'freecodecamp', 'brunofin'
 
     //used to be channel and index teh parameters
-    connectionStream: function(index = twitchApplication.twitchChannels.length - 1) {
+    /*connectionStream: function(index = twitchApplication.twitchChannels.length - 1) {
 
         var twitchChannels = twitchApplication.twitchChannels;
         //channel name
@@ -36,7 +36,7 @@ var twitchApplication = {
                 //DOM element for that situation
                 twitchAPIView.showChannelsInexistentch(ch, idx);
             });
-    },
+    },*/
 
     connectionChannel: function(index = this.twitchChannels.length - 1) {
 
@@ -61,7 +61,40 @@ var twitchApplication = {
                 //call connectionStream...
                 //console.log(idx);
                 //console.log(twitchApplication.twitchChannels);
-                connectionStream(idx);
+                //connectionStream(idx);
+
+                var twitchChannels = twitchApplication.twitchChannels;
+                //channel name
+                var ch = twitchChannels[twitchChannels.length - 1];
+                //index of the channel
+                var idx = index;
+                var url = 'https://api.twitch.tv/kraken/streams/' + ch;
+
+                console.log('At connect stream.\nIndex: ' + idx + ' Channel: ' + ch);
+
+                $.ajax({
+                        url: url,
+                        headers: {
+                            'Client-ID': 'z6qd7dtxvbs8oz6yik78d9yci86xsf'
+                        },
+                        type: 'GET',
+                        dataType: 'json',
+                    })
+                    .done(function(data) {
+
+                        twitchAPIView.showChannels(ch, idx, data);
+
+                        //resizing the twitch div
+                        $('.twitch').height(240 + (idx + 1) * 160);
+
+                    })
+                    .fail(function(xhr, error) {
+                        //console.log('An error occured: ' + error);
+                        //insert error 404 on the channel here....
+                        //DOM element for that situation
+                        twitchAPIView.showChannelsInexistentch(ch, idx);
+                    });
+
 
             })
             .fail(function(xhr, err, errorThrown) {

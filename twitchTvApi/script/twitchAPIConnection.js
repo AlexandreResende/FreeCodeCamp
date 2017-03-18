@@ -22,11 +22,6 @@ var twitchApplication = {
                 dataType: 'json',
             })
             .done(function(data) {
-                //call connectionStream...
-                //console.log(idx);
-                //console.log(twitchApplication.twitchChannels);
-                //connectionStream(idx);
-
                 var twitchChannels = twitchApplication.twitchChannels;
                 //channel name
                 var ch = twitchChannels[twitchChannels.length - 1];

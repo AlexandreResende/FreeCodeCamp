@@ -13,7 +13,9 @@ $(document).ready(function() {
 
         if (channelName) {
 
+            //adding channel to twitchApplication.twitchChannels
             twitchApplication.addChannel(channelName);
+            //connecting channel to the html page
             twitchApplication.connectionChannel();
 
         } else {
@@ -30,6 +32,7 @@ $(document).ready(function() {
     // event for click on removeChannel button
     $('.removeChannel').on('click', function() {
 
+        //adding to channelsRemove all the elements with the active class to be deleted
         var channelsToRemove = document.getElementsByClassName('active');
         twitchApplication.removeChannel(channelsToRemove);
 

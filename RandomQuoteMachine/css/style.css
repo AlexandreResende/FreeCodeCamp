@@ -3,6 +3,15 @@
 	padding: 0;
 }
 
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	position: relative;
+}
+
 /*font-family: 'Indie Flower', cursive;*/
 .indieFlower{
 	font-family: 'Indie Flower', sans-serif;
@@ -17,11 +26,11 @@
 }
 
 .quoteBlock {
-	margin-top: 10em;
+	margin-top: 1em;
 	font-family: 'Indie Flower', sans-serif;
 	border: 0.1em solid black;
 	width:  50%;
-	height: 30em;
+	height: 25em;
 }
 
 .fontFormat {
@@ -31,12 +40,11 @@
 
 .btn {
 	position: absolute;
-	margin-left: 10%;
 	bottom: 0;
 	left: 0;
 	font-family: 'Indie Flower', sans-serif;
 	font-size: 1.5em;
-	width: 40%;
+	width: 50%;
 	height: 3em;
 	display: inline-block;
 }
@@ -46,11 +54,15 @@
 }
 
 .footer{
-	position: absolute;
+	position: fixed;
+	margin-bottom: 0px; 
 	font-family: 'Indie Flower', sans-serif;
 	font-size: 1.5em;
 	width: 100%;
-	bottom: 0;
+	height: 2.5em;
+	bottom: 0px;
+	padding-bottom: 0px;
+	background-color: rgb(173, 216, 230);
 }
 
 a,
